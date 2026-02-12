@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Campus GPS Navigation</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    background:#f4f6f9;
+}
+header{
+    background:#002147;
+    color:white;
+    padding:20px;
+    font-size:30px;
+}
+select, button{
+    padding:15px;
+    font-size:18px;
+    margin:20px;
+    width:250px;
+}
+button{
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+button:hover{
+    background:#0056b3;
+}
+</style>
+</head>
+
+<body>
+
+<header>SMART CAMPUS GPS NAVIGATION - CIT</header>
+
+<h2>Select Your Destination</h2>
+
+<select id="destination">
+    <option value="">--Select Department--</option>
+    <option value="13.0827,80.2707">Main Building</option>
+    <option value="13.0831,80.2712">CSE Block</option>
+    <option value="13.0835,80.2720">EEE Block</option>
+    <option value="13.0840,80.2718">Library</option>
+</select>
+
+<br>
+
+<button onclick="getLocation()">Get Directions</button>
+
+<script>
+function getLocation() {
+
+    var destination = document.getElementById("destination").value;
+
+    if(destination === ""){
+        alert("Please select a destination");
+        return;
+    }
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            var userLat = position.coords.latitude;
+            var userLong = position.coords.longitude;
+
+            var mapsUrl = "https://www.google.com/maps/dir/"
+                + userLat + "," + userLong + "/"
+                + destination;
+
+            window.open(mapsUrl, "_blank");
+
+        });
+
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+</script>
+
+</body>
+</html>
