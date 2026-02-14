@@ -5,41 +5,46 @@
 
 <style>
 body{
-font-family:Arial;
-background:#f4f6f9;
-margin:0;
-text-align:center;
+  font-family: Arial;
+  margin:0;
+  background: linear-gradient(135deg,#e3f2fd,#ffffff);
+  text-align:center;
 }
 
 header{
-background:#002147;
-color:white;
-padding:25px;
-font-size:36px;
+  background: linear-gradient(90deg,#002147,#0d6efd);
+  color:white;
+  padding:30px;
+  font-size:34px;
+  letter-spacing:1px;
 }
 
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-padding:40px;
-max-width:1000px;
-margin:auto;
+.card{
+  background:white;
+  margin:60px auto;
+  padding:40px;
+  width:85%;
+  max-width:850px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+.card:hover{
+  transform:scale(1.02);
 }
 
 button{
-padding:20px;
-font-size:18px;
-border:none;
-border-radius:12px;
-background:#007BFF;
-color:white;
-cursor:pointer;
-width:100%;
+  padding:14px 32px;
+  margin:8px;
+  border:none;
+  border-radius:12px;
+  background: linear-gradient(45deg,#007BFF,#00b4ff);
+  color:white;
+  font-size:17px;
+  cursor:pointer;
 }
-
 button:hover{
-background:#0056b3;
+  opacity:0.9;
 }
 </style>
 </head>
